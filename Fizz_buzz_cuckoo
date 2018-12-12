@@ -1,0 +1,23 @@
+function fizzBuzzCuckooClock(time) {
+  var hour = parseInt(time.split(':')[0]);
+  var min = parseInt(time.split(':')[1]);
+  if(min==0){
+    return fnHour(hour);
+  }else if(min==30){return 'Cuckoo';}
+  else{
+    return fnMin(min);
+  }
+}
+function fnHour(hour){
+    if(hour>12){hour=hour-12;}
+    else if(hour==0){hour=hour+12;}
+    var cuckoo = 'Cuckoo';
+    for(i=1;i<hour;i++){cuckoo = cuckoo+' Cuckoo'}
+    return cuckoo;
+}
+function fnMin(min){
+  if((min%3==0)&&(min%5==0)){return 'Fizz Buzz';}
+  else if(min%3==0){return 'Fizz';}
+  else if(min%5==0){return 'Buzz';}
+  else{return 'tick';}
+}
